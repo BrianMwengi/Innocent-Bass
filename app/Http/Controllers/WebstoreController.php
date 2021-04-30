@@ -14,7 +14,7 @@ class WebstoreController extends Controller
         $products = Product::orderBy('id', 'DESC')->take(3)->get();
         # We use the home view for the tutorial, but you could
         # use other views too. Home will be our webstore view
-        return view('site.pages.index');
+        return view('site.pages.index')->with('products', $products);
     }
 
     # Our function for adding a certain product to the cart
